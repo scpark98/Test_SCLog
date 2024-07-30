@@ -209,7 +209,8 @@ HCURSOR CTestUtilLogDlg::OnQueryDragIcon()
 
 void CTestUtilLogDlg::OnBnClickedOk()
 {
-	//0 ~ 999까지 반복되는 thread_function()을 호출한다.
+	//ok버튼 클릭할때마다 0 ~ 999까지 반복되는 thread_function()을 호출한다.
+	//CSCLog에서 logWrite를 빠뜨리지 않고 정확히 기록하는지 확인하기 위한 테스트 코드.
 	SetWindowText(i2S(m_thread_index + 1));
 
 	int max_loop = 1000;
