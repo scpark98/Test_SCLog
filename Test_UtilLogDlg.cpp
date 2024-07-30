@@ -210,7 +210,7 @@ HCURSOR CTestUtilLogDlg::OnQueryDragIcon()
 void CTestUtilLogDlg::OnBnClickedOk()
 {
 	//0 ~ 999까지 반복되는 thread_function()을 호출한다.
-	SetWindowText(i2S(m_thread_index));
+	SetWindowText(i2S(m_thread_index + 1));
 
 	int max_loop = 1000;
 
