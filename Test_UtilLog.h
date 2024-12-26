@@ -31,4 +31,4 @@ public:
 };
 
 extern CTestUtilLogApp theApp;
-extern SCLog gLog;
+extern CSCLog gLog;

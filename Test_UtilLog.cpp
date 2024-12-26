@@ -13,7 +13,7 @@
 #define new DEBUG_NEW
 #endif
 
-SCLog gLog;
+CSCLog gLog;
 
 // CTestUtilLogApp
 
@@ -49,8 +49,16 @@ BOOL CTestUtilLogApp::InitInstance()
 
 	//로그파일의 위치를 별도로 지정하지 않고 로그를 남길 경우 .exe파일 폴더내에 "Log"라는 폴더를 생성하여 기록
 	logWrite(_T("\n==================== Program Start ===================="));
-	logWrite(_T("\nwrite in default log folder and name"));
+
+	//한줄 빈 라인 추가할 경우
+	logWrite(_T(""));
+
+	//시각, 함수정보까지는 출력할 경우
+	logWrite(_T(" "));
+
+	logWrite(_T("write in default log folder and name"));
 	logWrite(_T("log path = %s"), gLog.get_log_full_path());
+	gLog.open_log_file();
 
 	//로그파일의 위치를 별도로 지정할 경우, 중간에 로그 폴더 또는 로그파일명을 변경할 경우
 	//gLog.set(_T("../../custom log folder/folder1/folder2"), _T("renamed_log_filename"));
@@ -58,10 +66,8 @@ BOOL CTestUtilLogApp::InitInstance()
 	//logWrite(_T("log path = %s"), gLog.get_log_full_path());
 	
 	//로그파일에 함수명과 라인을 표시하지 않고자 할 경우
-	gLog.show_function_name(false);
+	//gLog.show_function_name(false);
 	//gLog.show_line_number(false);
-
-	logWrite(_T("\n==================== Program Start ===================="));
 
 	logWrite(_T("log test = %d, %s, %s"), 123, _T("abc"), _T("한글  테스트"));
 

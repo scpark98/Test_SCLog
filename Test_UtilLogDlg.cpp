@@ -234,7 +234,8 @@ void CTestUtilLogDlg::thread_function(int thread_index, int start, int end)
 	for (int i = start; i < end; i++)
 	{
 		logWrite(_T("thread_index = %d, loop = %d"), thread_index, i);
-		std::this_thread::sleep_for(std::chrono::milliseconds(10));
+		//아래 딜레이를 주면 누락되는 로그 발생. 절대 딜레이를 인위적으로 주지 말것!
+		//std::this_thread::sleep_for(std::chrono::milliseconds(10));
 	}
 
 	logWrite(_T("thread %d terminated."), thread_index);
