@@ -69,6 +69,10 @@ BOOL CTestUtilLogApp::InitInstance()
 	//gLog.show_function_name(false);
 	//gLog.show_line_number(false);
 
+#if _DEBUG
+	gLog.set_log_level(SCLOG_LEVEL_DEBUG);
+#endif
+
 	logWrite(_T("log test = %d, %s, %s"), 123, _T("abc"), _T("한글  테스트"));
 
 	// 애플리케이션 매니페스트가 ComCtl32.dll 버전 6 이상을 사용하여 비주얼 스타일을

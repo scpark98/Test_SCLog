@@ -72,6 +72,7 @@ BEGIN_MESSAGE_MAP(CTestUtilLogDlg, CDialogEx)
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDOK, &CTestUtilLogDlg::OnBnClickedOk)
 	ON_BN_CLICKED(IDCANCEL, &CTestUtilLogDlg::OnBnClickedCancel)
+	ON_EN_CHANGE(IDC_EDIT1, &CTestUtilLogDlg::OnEnChangeEdit1)
 END_MESSAGE_MAP()
 
 
@@ -239,4 +240,12 @@ void CTestUtilLogDlg::thread_function(int thread_index, int start, int end)
 	}
 
 	logWrite(_T("thread %d terminated."), thread_index);
+}
+
+void CTestUtilLogDlg::OnEnChangeEdit1()
+{
+	CString text;
+
+	GetDlgItemText(IDC_EDIT1, text);
+	logWriteD(_T("%s"), text);
 }
