@@ -7,7 +7,7 @@
 #include "Test_UtilLog.h"
 #include "Test_UtilLogDlg.h"
 
-#include "../../Common/Functions.h"
+#include "Common/Functions.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -37,7 +37,6 @@ CTestUtilLogApp::CTestUtilLogApp()
 // 유일한 CTestUtilLogApp 개체입니다.
 
 CTestUtilLogApp theApp;
-//UtilLog gLog;
 
 
 // CTestUtilLogApp 초기화
@@ -48,7 +47,8 @@ BOOL CTestUtilLogApp::InitInstance()
 	CString sTitle = get_part(sExe, fn_title);
 
 	//로그파일의 위치를 별도로 지정하지 않고 로그를 남길 경우 .exe파일 폴더내에 "Log"라는 폴더를 생성하여 기록
-	logWrite(_T("\n==================== Program Start ===================="));
+	//logWrite(_T("\n==================== Program Start ===================="));
+	gLog.write_start_log();
 
 	//한줄 빈 라인 추가할 경우
 	logWrite(_T(""));
