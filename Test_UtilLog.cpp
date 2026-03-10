@@ -47,7 +47,6 @@ BOOL CTestUtilLogApp::InitInstance()
 	CString sTitle = get_part(sExe, fn_title);
 
 	//로그파일의 위치를 별도로 지정하지 않고 로그를 남길 경우 .exe파일 폴더내에 "Log"라는 폴더를 생성하여 기록
-	//logWrite(_T("\n==================== Program Start ===================="));
 	gLog.write_start_log();
 
 	//한줄 빈 라인 추가할 경우
@@ -145,7 +144,5 @@ BOOL CTestUtilLogApp::InitInstance()
 int CTestUtilLogApp::ExitInstance()
 {
 	// TODO: 여기에 특수화된 코드를 추가 및/또는 기본 클래스를 호출합니다.
-	logWrite(_T("==================== Program Exit ====================\n"));
-
 	return CWinApp::ExitInstance();
 }
