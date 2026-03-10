@@ -46,7 +46,9 @@ BOOL CTestUtilLogApp::InitInstance()
 	CString sExe = get_exe_filename();
 	CString sTitle = get_part(sExe, fn_title);
 
-	//로그파일의 위치를 별도로 지정하지 않고 로그를 남길 경우 .exe파일 폴더내에 "Log"라는 폴더를 생성하여 기록
+	//로그파일의 위치를 별도로 지정하지 않고 로그를 남길 경우 .exe파일 폴더내에 "Log"라는 폴더를 생성하여 기록.
+	//만약 로그파일명 또는 경로를 변경하고자 할 경우는 gLog.set() 함수를 통해서 변경할 수 있고
+	//그 후에 gLog.write_start_log();를 호출하면 된다.
 	gLog.write_start_log();
 
 	//한줄 빈 라인 추가할 경우
